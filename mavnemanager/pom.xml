@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>maven.study</groupId>
+  <artifactId>mavnemanager</artifactId>
+  <version>1.0</version>
+
+  <!-- 指定打包方式為 pom -->
+  <packaging>pom</packaging>
+
+  <name>mavnemanager</name>
+  <!-- FIXME change it to the project's website -->
+  <url>http://www.example.com</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+
+  <modules>
+    <module>sub1</module>
+    <module>sub2</module>
+    <module>sub3</module>
+  </modules>
+
+  <!-- 父專案管理一來函式庫版本 -->
+  <!-- 即使在父專案引入管理版本，
+       不代表子專案可以使用函式庫，
+       子專案必須也要引入函式庫名稱才可使用，
+       但可以不用寫版本 -->
+  <dependencyManagement>
+    <dependencies>
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>5.3.20</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-beans</artifactId>
+        <version>5.3.20</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>5.3.20</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-expression -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-expression</artifactId>
+        <version>5.3.20</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-aop</artifactId>
+        <version>5.3.20</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+</project>
